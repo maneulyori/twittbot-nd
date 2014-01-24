@@ -127,8 +127,8 @@ class twittbot:
 			self.track.extend(self.retweet_tags)
 			self.stream.filter(track = self.track, async = True)
 		
-		sleep_start = datetime.datetime.strptime(config.sleep_start, "%H:%M").time()
-		sleep_end = datetime.datetime.strptime(config.sleep_end, "%H:%M").time()
+		sleep_start = datetime.datetime.strptime(config.twittbot.sleep_start, "%H:%M").time()
+		sleep_end = datetime.datetime.strptime(config.twittbot.sleep_end, "%H:%M").time()
 		now = datetime.datetime.now().time()
 
 		if sleep_start < now and sleep_end > now:
