@@ -129,7 +129,7 @@ class twittbot:
 		
 		sleep_start = datetime.datetime.strptime(config.sleep_start, "%H:%M").time()
 		sleep_end = datetime.datetime.strptime(config.sleep_end, "%H:%M").time()
-		noww = datetime.datetime.now().time()
+		now = datetime.datetime.now().time()
 
 		if sleep_start < now and sleep_end > now:
 			sleep(10)
