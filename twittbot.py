@@ -132,7 +132,7 @@ class twittbot:
 		noww = datetime.datetime.now().time()
 
 		if sleep_start < now and sleep_end > now:
-			sleep(1)
+			sleep(10)
 			return
 
 		random_tweet = self.tweets_store[random.randint(0, len(self.tweets_store) - 1)].replace("\\n", chr(0x0A))
