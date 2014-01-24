@@ -29,6 +29,8 @@ class oauth:
 class twittbot:
 	interval = 10        # The interval in minutes the tweets are posted.
 	followback = False   # Follow back new followers
+	sleep_start = "00:00"
+	sleep_end = "06:00"
 	okay_texts = ["Looks great.", "Okay.", "Success!", "Whee!", "\o/", "You now should", "Awesome!"]
 
 class files:

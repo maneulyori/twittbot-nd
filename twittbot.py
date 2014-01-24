@@ -24,6 +24,7 @@ import httplib2
 import random
 import string
 import base64
+import datetime
 from time import sleep
 try:
 	import json
@@ -125,6 +126,15 @@ class twittbot:
 			self.track = ['@' + self.me.screen_name]
 			self.track.extend(self.retweet_tags)
 			self.stream.filter(track = self.track, async = True)
+		
+		sleep_start = datetime.datetime.strptime(config.sleep_start, "%H:%M").time()
+		sleep_end = datetime.datetime.strptime(config.sleep_end, "%H:%M").time()
+		noww = datetime.datetime.now().time()
+
+		if sleep_start < now and sleep_end > now:
+			sleep(1)
+			return
+
 		random_tweet = self.tweets_store[random.randint(0, len(self.tweets_store) - 1)].replace("\\n", chr(0x0A))
 		if '${{{RANDOMWORD}}}' in random_tweet:
 			random_tweet = random_tweet.replace('${{{RANDOMWORD}}}', self.random_word())
